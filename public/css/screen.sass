@@ -1,0 +1,156 @@
+!grid = 20px
+
+!page_width = 600px
+
+!colora = #0f0f23
+/ !colorb = #090915
+!colorb = #FAF6DE + #111
+!colorB = !colorb - #DDD
+
+!flourish_family = "'Linux Libertine O C', Times, Georgia, serif"
+!body_family = "Times, Georgia, serif"
+
+@font-face
+  :font-family 'Linux Libertine O C'
+  :src '/fonts/linux-libertine.otf'
+
+html
+  :background = !colorb
+  :font-size 62.5%
+  :line-height 2em
+  :min-width = !page_width
+
+.centify
+  :padding 0 10px
+  :width = !page_width - 20px
+  :margin 0 auto
+
+.amp
+  :font-family Baskerville, Palatino, "Book Antiqua", serif
+  :font-style italic
+
+header
+  :background = !colora
+  :padding 40px 0 0
+
+  h1
+    :text-align center
+    :font-size 60px
+    :color #F33
+    / :color #6B2145
+    :font-family = !flourish_family
+    :letter-spacing -0.06em
+    :font-weight 400
+    :line-height 60px
+    :z-index 1
+    :text-shadow = 1px 1px 0 !colora
+    :position relative
+
+#moonphases
+  :height 140px
+  :overflow hidden
+  :width 200px
+  :margin -20px auto 0 auto
+  img
+    :opacity 0.8
+
+.hr
+  :background = !colora "url('/images/hr.png') repeat-x center top"
+  :height 20px
+  :text-align center
+  #flourish
+    :background url('/images/flourish.png') no-repeat center top
+    :position relative
+    :z-index 1
+    :width 107px
+    :height 60px
+    :margin 0 auto
+    :top -20px
+    :color #FFF
+    :text-shadow 1px 1px 0 #000
+    :cursor default
+    time
+      :font-family = !flourish_family
+      :font-size 24px
+      :padding-top 15px
+      :display block
+      .units
+        :font-size 16px
+        :line-height 10px
+        :font-family = !body_family
+        :font-style italic
+        :opacity 1
+        :display block
+
+article
+  :margin 60px 0 120px
+  :color = !colorb - #CCC
+  / :text-shadow = 0 0 1px !colorb
+  :font-size 16px
+
+  p.bold
+    :font-size 18px
+    :font-style italic
+    :line-height 20px
+
+    &:first-letter
+      :font-size 250%
+      :line-height 60px
+      :margin 0 10px
+      :font-weight bold
+      :float left
+      :width 40px
+      :text-align center
+      :color = !colorB
+
+  p + p
+    :margin-left 20px
+
+  h2
+    :text-align center
+    :font-size 36px
+    :line-height 80px
+    :margin 20px 0
+    :color = !colorB
+    :padding-top 20px
+    :font-family = !flourish_family
+    span
+      :display block
+      :color = !colorb - #999
+      :font-size 14px
+      :line-height 20px
+      :font-family = !body_family
+      :font-weight 400
+      :margin-bottom -20px
+      :font-style italic
+
+dl
+  :line-height 20px
+  dt
+    :color #628077
+    :float left
+    :width 100px
+    :margin 0 20px 0 0
+    :text-align right
+  dd
+    :margin-bottom 10px
+    :margin-left 120px
+    a
+      :color #F33
+
+      :line-height 19px
+      :text-decoration none
+      :text-transform uppercase
+      :font-size 80%
+      &:hover
+        :border-bottom 1px solid #F33
+
+    / :color #6B2145
+
+#parallax_background
+  :background url('/images/parallax-layer-1.png') 20% 0 repeat-x
+#parallax_midground
+  :background url('/images/parallax-layer-2.png') 60% 0 repeat-x
+#parallax_foreground
+  :background url('/images/parallax-layer-3.png') 110% 0 repeat-x
+
