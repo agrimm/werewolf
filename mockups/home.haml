@@ -10,25 +10,37 @@
 .hr
   #flourish
     %time
-      .state{:title => 'Tonight'}
+      - if full_moon?
         Tonight
         %span.units{hidden} prepare&hellip;
-      .state{:title => 'Next Week'}
-        7
+      - else
+        = days_until_full_moon
         %span.units{hidden} sleeps left
 
 %article
   .centify
     %p.bold Summoned by the lunar cycle, wolves lurk in the darkness. While we sleep, they feast on our flesh. Month after month our numbers are savaged by the Beasts. Nobody deserves the fate bequeathed by them as it is to die a thousand deaths. They don't distinguish between women or children or the sick or the strong. Enough, brothers! No more. We must act first and lynch any who we suspect of turning. The souls of the saved shall forgive our injustices <span class="amp">&amp;</span> the Lord shall guide us through err. Come, join the hunt, lest you be of Beast yourself&hellip;
+    
+    %h2#wtf What is Werewolf?
+    
+    %p Werewolf is a party game with a psychological edge. It is all about controlling groups. Think 'Lord of the Flys', but uh&hellip; without pigs. Really though, it's simple to pick up <em>and</em> lots of fun to play.
+    
+    %p
+      If you've never played before, don't worry, just turn up and you'll pick it up quick-smart. However, for the curious visitor, here is a brief overview: the game starts by players sitting in a circle. A moderator secretly assigning each person to be either a "werewolf" or a "villager". The game then runs in phases. During the "night" phase, only the werewolves are allowed to open their eyes and they signal villager to be killed. During the "daylight" phase everybody opens their eyes (werewolves included) and somebody is chosen to be lynched. The game keeps going until either group is dead. The
+      %a{:href => 'http://en.wikipedia.org/wiki/Mafia_(party_game)'} Wikipedia article
+      is also a good source for more information.
+    
+    #flickr
+      .loading Loading photos&hellip;
 
     %h2
-      %span Township of
+      %span In the township of
       Sydney
     
     %dl
       %dt When?
       %dd
-        September 5th, 2009.
+        = next_full_moon.strftime('%A %e %B, %Y.')
         7pm until late.
       %dt Where?
       %dd
@@ -42,8 +54,6 @@
       %dd
         %p
           The Syd-Werewolf
-          %a{:href => 'http://twitter.com/syd_werewolf'} Twitter account
-          is where you'll find news and reminders about upcoming events.
-          %a{:href => 'http://twitter.com/?status=@syd_werewolf%20&in_reply_to=syd_werewolf'} @ reply
-          if you have any questions.
+          %a{:href => 'http://groups.google.com/group/syd-werewolf'} mailing list
+          is where all the action happens. You can ask any questions you may have here.
       

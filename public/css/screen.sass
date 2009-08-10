@@ -3,7 +3,6 @@
 !page_width = 600px
 
 !colora = #0f0f23
-/ !colorb = #090915
 !colorb = #FAF6DE + #111
 !colorB = !colorb - #DDD
 
@@ -87,6 +86,16 @@ article
   :color = !colorb - #CCC
   / :text-shadow = 0 0 1px !colorb
   :font-size 16px
+  :line-height 20px
+
+  a
+    :color #F33
+    :line-height 19px
+    :text-decoration none
+    :text-transform uppercase
+    :font-size 80%
+    &:hover
+      :border-bottom 1px solid #F33
 
   p.bold
     :font-size 18px
@@ -104,15 +113,15 @@ article
       :color = !colorB
 
   p + p
-    :margin-left 20px
+    :text-indent 20px
 
   h2
+    :clear both
     :text-align center
-    :font-size 36px
+    :font-size 24px
     :line-height 80px
-    :margin 20px 0
+    :padding 20px 0
     :color = !colorB
-    :padding-top 20px
     :font-family = !flourish_family
     span
       :display block
@@ -122,30 +131,44 @@ article
       :font-family = !body_family
       :font-weight 400
       :margin-bottom -20px
+      :margin-top 20px
       :font-style italic
 
-dl
-  :line-height 20px
-  dt
-    :color #628077
+  dl
+    :line-height 20px
+    dt
+      :color #628077
+      :float left
+      :width 100px
+      :margin 0 20px 0 0
+      :text-align right
+    dd
+      :margin-bottom 10px
+      :margin-left 120px
+
+#flickr
+  :margin 20px -10px 0 -10px
+
+  .loading
+    :color = !colorb - #666
+    :text-align center
+    :font-style italic
+
+  a.flickr_image
+    :border = 5px "solid" (!colorb - #333)
+    :background-color = !colorb - #333
+    :width 90px
+    :height 90px
+    :overflow hidden
+    :margin 0 10px
+    :display block
     :float left
-    :width 100px
-    :margin 0 20px 0 0
-    :text-align right
-  dd
-    :margin-bottom 10px
-    :margin-left 120px
-    a
-      :color #F33
-
-      :line-height 19px
-      :text-decoration none
-      :text-transform uppercase
-      :font-size 80%
-      &:hover
-        :border-bottom 1px solid #F33
-
-    / :color #6B2145
+    :text-align center
+    &:hover
+      :border-color #628077
+      :background-color #628077
+    img
+      :width 90px
 
 #parallax_background
   :background url('/images/parallax-layer-1.png') 20% 0 repeat-x

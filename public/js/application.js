@@ -17,9 +17,6 @@
             },
             animDur = 300;
 
-        console.log(start);
-        console.log(end);
-
         flourish.mouseenter(function(){
             nSleepsMsg.css('opacity', start.opacity);
             nSleeps.animate({paddingTop: end.paddingTop}, animDur);
@@ -28,5 +25,23 @@
             nSleeps.animate({paddingTop: start.paddingTop}, animDur);
             nSleepsMsg.animate({opacity: start.opacity}, animDur, function(){ nSleepsMsg.hide();});
         });
+
+        var flickr = $('#flickr');
+
+        $.getJSON('http://api.flickr.com/services/feeds/groups_pool.gne? id=1225246@N22&lang=en-us&format=json&jsoncallback=?', function(data){
+            flickr.children('.loading').fadeOut();
+            $.each(data.items, function(i,item){
+                if (i >= 5) { return };
+
+                var link = $('<a></a>').attr('href', item.link)
+                                       .attr('title', item.title)
+                                       .addClass('flickr_image'),
+                    img = $('<img/>').attr('src', item.media.m.replace(/_m.jpg$/,'_s.jpg'))
+                                     .attr('alt', item.title)
+                                     .appendTo(flickr)
+                                     .wrap(link);
+            });
+        });
+
     });
 })(jQuery);
