@@ -39,7 +39,7 @@ helpers do
   end
 
   def days_until_full_moon
-    (next_full_moon - DateTime.now).floor
+    (next_full_moon - DateTime.now).floor + 1
   end
 
 end
