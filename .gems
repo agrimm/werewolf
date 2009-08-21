@@ -1,5 +1,3 @@
 haml --version=2.2.2
 sinatra --version=0.9.4
-tyrone --version=0.3.2
-astro_moon --version=0.2
 activesupport --version=2.3.3
