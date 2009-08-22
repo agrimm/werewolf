@@ -1,4 +1,11 @@
-gem 'activesupport', '2.3.3'
+File.file?(gems_file = "#{File.dirname(__FILE__)}/.gems") && File.read(gems_file).each do |gem_decl|
+  gem_name, version = gem_decl[/^([^\s]+)/,1], gem_decl[/--version ([^\s]+)/,1]
+  version ? gem(gem_name, version) : gem(gem_name)
+end
+
+require 'sinatra'
+require 'haml'
+require 'sass'
 require 'activesupport' # TODO Don't require everything
 
 helpers do
@@ -16,7 +23,7 @@ helpers do
   end
 
   def days_until_full_moon
-    (next_full_moon - DateTime.now).to_i
+    (next_full_moon - Date.today).to_i
   end
 
   def hidden

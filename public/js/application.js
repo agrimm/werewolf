@@ -1,8 +1,6 @@
 (function($){
     $(function(){
 
-        $('.centify').grid();
-
         var flourish = $('#flourish'),
             nSleeps = $('#flourish time'),
             nSleepsMsg = $('#flourish time .units');
