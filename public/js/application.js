@@ -40,6 +40,19 @@
                                      .wrap(link);
             });
         });
+        
+        $.fn.scroll = function(width, speed) {
+            var startX = this.css('backgroundPositionX');
+            this.animate({'backgroundPositionX': width}, speed, 'linear', function(){
+                $(this).css('backgroundPositionX', 0);
+                $(this).scroll(width, speed);
+            });
+        }
+
+
+        $('#parallax_background').scroll(512, 15000);
+        $('#parallax_midground').scroll(512, 60000);
+        $('#parallax_foreground').scroll(512, 120000);
 
     });
 })(jQuery);
