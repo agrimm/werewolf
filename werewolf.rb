@@ -9,7 +9,7 @@ require 'sass'
 require 'activesupport'
 
 configure do
-  Time.zone = 'UTC'
+  Time.zone = 'Sydney'
 end
 
 helpers do
@@ -27,7 +27,7 @@ helpers do
   end
   
   def days_until_full_moon
-    (next_full_moon - Date.today).to_i
+    (next_full_moon - ActiveSupport::TimeZone['Sydney'].today).to_i
   end
 
   def hidden
