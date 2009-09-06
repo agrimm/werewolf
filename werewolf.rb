@@ -6,7 +6,11 @@ end
 require 'sinatra'
 require 'haml'
 require 'sass'
-require 'activesupport' # TODO Don't require everything
+require 'activesupport'
+
+configure do
+  Time.zone = 'UTC'
+end
 
 helpers do
 
@@ -17,11 +21,11 @@ helpers do
   def full_moon?
     next_full_moon.today?
   end
-
+  
   def next_full_moon
-    Date.civil(2009,9,5)
+    Date.civil(2009,10,4)
   end
-
+  
   def days_until_full_moon
     (next_full_moon - Date.today).to_i
   end
