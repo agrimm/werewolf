@@ -42,10 +42,19 @@
             });
         }
 
-
         $('#parallax_background').scroll(512, 120000);
         $('#parallax_midground').scroll(512,  60000);
         $('#parallax_foreground').scroll(512, 30000);
-
+        
+        $('header').mousemove(function(e){
+           var self = $(this),
+               nPhases = 9,
+               phase = Math.ceil(nPhases * (e.clientX / self.width())),
+               posX = 200 * phase;
+           $('#moonphases').css('backgroundPositionX', posX);
+           
+           console.log(posX);
+        });
+        
     });
 })(jQuery);
