@@ -41,6 +41,7 @@
             });
         });
         
+        
         $.fn.scroll = function(width, speed) {
             var startX = this.css('backgroundPositionX');
             this.animate({'backgroundPositionX': width}, speed, 'linear', function(){
@@ -50,9 +51,9 @@
         }
 
 
-        $('#parallax_background').scroll(512, 15000);
-        $('#parallax_midground').scroll(512, 60000);
-        $('#parallax_foreground').scroll(512, 120000);
+        $('#parallax_background').scroll(512, 120000);
+        $('#parallax_midground').scroll(512,  60000);
+        $('#parallax_foreground').scroll(512, 30000);
 
     });
 })(jQuery);
