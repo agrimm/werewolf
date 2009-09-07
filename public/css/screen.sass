@@ -31,6 +31,9 @@ html
 header
   :background = !colora
   :padding 40px 0 0
+  :position fixed
+  :width 100%
+  :top 0
 
   h1
     :text-align center
@@ -49,11 +52,17 @@ header
   :overflow hidden
   :width 200px
   :margin -20px auto 0 auto
-  :z-index 3
   :background url('/images/phases.png') 1000px top
   :opacity 0.8
   img
     :opacity 0.8
+
+.floaties
+  :z-index 99
+  :background = !colorb
+  :position absolute
+  :margin-top 220px
+  :width 100%
 
 .hr
   :background = !colora "url('/images/hr.png') repeat-x center top"
@@ -62,7 +71,6 @@ header
   #flourish
     :background url('/images/flourish.png') no-repeat center top
     :position relative
-    :z-index 1
     :width 107px
     :height 60px
     :margin 0 auto
